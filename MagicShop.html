@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>电商首页</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta name="viewport" content="width=1080,target-densitydpi=device-dpi">
+    <link href="//cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css" rel="stylesheet" />
+    <link href="css/Mofaxdxq.css?v=a2" rel="stylesheet" />
+    <link href="css/Common.css?v=3" rel="stylesheet" />
+    <link href="css/reset.css" rel="stylesheet" />
+    <link href="css/studio.css" rel="stylesheet" />
+    <script type="text/javascript">
+        ! function (userAgent) {
+            var screen_w = parseInt(window.screen.width),
+                scale = screen_w / 1080;
+            if (/Android (\d+\.\d+)/.test(userAgent)) {
+                var version = parseFloat(RegExp.$1);
+                document.write(version > 2.3 ? '<meta name="viewport" content="width=1080, minimum-scale=' + scale + ', maximum-scale=' + scale + ', target-densitydpi=device-dpi">' : '<meta name="viewport" content="width=1080, target-densitydpi=device-dpi">');
+            } else {
+                document.write('<meta name="viewport" content="width=1080, minimum-scale=' + scale + ', maximum-scale=' + scale + ', user-scalable=no, target-densitydpi=device-dpi">');
+            }
+        }(navigator.userAgent);
+    </script>
+    <script>
+        if (location.protocol != 'https:' && location.href.indexOf(".net") >= 0) {
+            location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+        }
+    </script>
+</head>
+<body>
+    <div class="TitleBar1">
+        <div class="oTitle1">
+            <span class="">全部小店</span>
+            <div class="AllShopReturn"></div>
+        </div>
+    </div>
+    <div class="dynr">
+        <!--==========魔法小店===============-->
+        <div class="mfxd">
+            <div class="mfxd-top">
+                <div class="zxxd">
+                    <ul class="select cl pos-r">
+                        <li class="ck li01">
+                            <span class="up  active   ">最新小店</span>
+                            <ul class="second  hide">
+                                <li class="cur  active   zxshop" data-id="1">最新小店</li>
+                                <li data-id="2"  class="zxfb">最新发布</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="xlyx tap" data-id="4">
+                    销量优先
+                </div>
+                <div class="hzs tap" data-id="3">
+                    获赞数
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="banxin">       
+        <div class="toptab  clearfix">          
+            <div class="znr1">
+                <div class="mmscnr  tabcontent">
+                </div>
+                <!--下面的内容就是点击魔法小店时候的内容-->
+                <div class="tabcontent  mfxd-content">
+                    <!--下面是具体的内容-->
+                    <div class="jtnr">
+                        <script>
+                            if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+                                document.getElementsByClassName("AllShopReturn")[0].className += " ios";
+                                document.getElementsByClassName("jtnr")[0].style.paddingTop = "391px";
+                                document.getElementsByClassName("mfxd")[0].style.top = "211px";
+                            } else {
+                                document.getElementsByClassName("TitleBar1")[0].style.height = "170px";
+                                document.getElementsByClassName("jtnr")[0].style.paddingTop = "346px";
+                                document.getElementsByClassName("oTitle1")[0].style.top = "0";
+                                document.getElementsByClassName("mfxd")[0].style.top = "170px";
+                                document.getElementsByClassName("AllShopReturn")[0].className += " android";
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--这里是弹出框提示-->
+        <div  class="Prompt"   style="display:none">
+            没有更多数据了
+        </div>
+    </div>
+    <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//mall-res.manboker.com/lib/mcJsApi.js?v=88"></script>
+    <script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+    <script src="//cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+    <script src="//mall-res.manboker.com/lib/shop_config.js?v=a88"></script>
+    <script src="js/mofaxdxq.js?v=asd2"></script>
+    <script src='//mall-res.momentcam.net/lib/Counter.js' defer="defer" onload="goCounter()"></script>
+    <script src="//mall-res.manboker.com/newmall/tingyun-rum.js"></script>
+    <script>
+        function goCounter() {
+            Counter("什么值得买-全部小店页面浏览");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>新品首发</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <link href='../css/itemList.css?v=2' rel='stylesheet' type='text/css' />
+    <script type="text/javascript">
+        ! function (userAgent) {
+            var screen_w = parseInt(window.screen.width),
+                scale = screen_w / 1080;
+            if (/Android (\d+\.\d+)/.test(userAgent)) {
+                var version = parseFloat(RegExp.$1);
+                document.write(version > 2.3 ? '<meta name="viewport" content="width=1080, minimum-scale=' + scale + ', maximum-scale=' + scale + ', target-densitydpi=device-dpi">' : '<meta name="viewport" content="width=1080, target-densitydpi=device-dpi">');
+            } else {
+                document.write('<meta name="viewport" content="width=1080, minimum-scale=' + scale + ', maximum-scale=' + scale + ', user-scalable=no, target-densitydpi=device-dpi">');
+            }
+        }(navigator.userAgent);
+    </script>
+    <script>
+        if (location.protocol != 'https:' && location.href.indexOf(".net") >= 0) {
+            location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+        }
+    </script>
+    <style>
+        .contain {
+            overflow: hidden;
+        }
+
+            .contain .pic {
+                box-sizing: border-box;
+            }
+
+                .contain .pic a:nth-child(2) {
+                    margin: 10px auto 10px;
+                }
+
+                .contain .pic a:nth-child(3) {
+                    overflow: hidden;
+                    /*font-size: 0;*/
+                }
+
+                    .contain .pic a:nth-child(3) img {
+                        height: 18px;
+                        display: inline-block;
+                        vertical-align: middle;
+                        margin-right: 8px;
+                    }
+
+                    .contain .pic a:nth-child(3) span {
+                        display: inline-block;
+                        vertical-align: middle;
+                        font-size: 20px;
+                    }
+
+                .contain .pic a:nth-child(1) .phone {
+                    width: 90%;
+                    margin: 0 auto;
+                }
+    </style>
+</head>
+<body>
+    <div class="TitleBar">
+        <div class="oTitle">
+            <span>新品首发</span>
+            <div class="return">
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="contain" style="padding-bottom:30px;">
+            <script>
+                if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+                    document.getElementsByClassName("return")[0].className += " ios";
+                } else {
+                    document.getElementsByClassName("TitleBar")[0].style.height = "170px";
+                    document.getElementsByClassName("oTitle")[0].style.top = "0";
+                    document.getElementsByClassName("contain")[0].style.paddingTop = "170px";
+                    document.getElementsByClassName("return")[0].className += " android";
+                }
+            </script>
+        </div>
+    </div>
+    <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//moman-res-ali.manboker.com/lib/mcJsApi.js?v=021"></script>
+    <script src="//mall-res.manboker.com/lib/shop_config.js?v=23"></script>
+    <script src='//mall-res.momentcam.net/lib/Counter.js' defer="defer" onload="goCounter()"></script>
+    <script type='text/javascript' src='//mall-res.manboker.com/newmall/CN/js/Items/phoneList.js?v=120121'></script>
+    <script src="//cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+    <script src="../js/HomeSwiper.js"></script>
+    <script>
+        function goCounter() {
+            Counter("什么值得买-新品页面浏览");
+        }
+        $(function () {
+            var urlLinks = window.location.search == "" ? "?v=2" : window.location.search;
+            setTimeout(function () {
+                $("img.lazy").lazyload({
+                    placeholder: "//mall-res.manboker.com/newmall/DefaultPicture/Defaultdiagram.jpg",
+                    effect: "fadeIn",
+                    threshold : 400,
+                    container: $(".box"),
+                });
+                $(window).resize();
+            }, 100);
+
+          
+            for (var i = 0; i < HomeSwiper.New_More.length; i++) {
+                var html = "";
+                html += '<div id="' + HomeSwiper.New_More[i].id + '" class="pic">' +
+                         '<a href="javascript:void(0);">' +
+                         ' <img class="tip lazy"   src="' + app.getOptimizedImgUrl("//mall-res.manboker.com/newmall/DefaultPicture/Defaultdiagram.jpg", 100) + '"      data-original="' + app.getOptimizedImgUrl(HomeSwiper.New_More[i].src, 100) + '" />' +
+                         '<img class="phone lazy"  src="' + app.getOptimizedImgUrl("//mall-res.manboker.com/newmall/DefaultPicture/Online-retailers_loading_photoframe.jpg", 350) + '"        data-original="' + app.getOptimizedImgUrl(HomeSwiper.New_More[i].src1, 350) + '" > </a>' +
+                         ' <a href="javascript:void(0);">' + HomeSwiper.New_More[i].name + '</a>' +
+                        '  <a href="javascript:void(0);">' + HomeSwiper.New_More[i].price + '</a> </div>';
+
+                $(".box  .contain").append(html);
+            }
+            $(".pic").on("click", function () {
+                var id = $(this).attr("id");
+                window.location.href = "//artist.momentcam.net/page/DetailsPage.html" + urlLinks + "&productid=" + id;
+            });
+        });
+    </script>
+</body>
+</html>
+
+
